@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgendaSQLite.ContactDetailPage"
+             Title="Detalle de Contacto">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="20">
+
+            <Label Text="Información del Contacto"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,10"/>
+
+            <!-- Nombre (obligatorio) -->
+            <Label Text="Nombre *" FontSize="14" TextColor="Gray"/>
+            <Entry Text="{Binding CurrentContact.Name}"
+                   Placeholder="Nombre completo"
+                   FontSize="16"/>
+
+            <!-- Teléfono -->
+            <Label Text="Teléfono" FontSize="14" TextColor="Gray"/>
+            <Entry Text="{Binding CurrentContact.Phone}"
+                   Placeholder="Número de teléfono"
+                   Keyboard="Telephone"
+                   FontSize="16"/>
+
+            <!-- Email -->
+            <Label Text="Email" FontSize="14" TextColor="Gray"/>
+            <Entry Text="{Binding CurrentContact.Email}"
+                   Placeholder="correo@ejemplo.com"
+                   Keyboard="Email"
+                   FontSize="16"/>
+
+            <!-- Botón guardar -->
+            <Button Text="💾 Guardar Contacto"
+                    Command="{Binding SaveContactCommand}"
+                    BackgroundColor="SteelBlue"
+                    TextColor="White"
+                    Margin="0,20,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
